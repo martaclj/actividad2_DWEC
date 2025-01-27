@@ -1,0 +1,57 @@
+<div class="container mt-4">
+  <h2>Añadir Producto</h2>
+  <form [formGroup]="productForm" (ngSubmit)="addProduct()">
+    <div class="mb-3">
+      <label for="name" class="form-label">Nombre</label>
+      <input
+        type="text"
+        id="name"
+        formControlName="name"
+        class="form-control"
+        required
+      />
+    </div>
+    <div *ngIf="productForm.get('name').invalid && productForm.get('name').touched" class="alert alert-danger">
+      El nombre es obligatorio
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Descripción</label>
+      <textarea
+        id="description"
+        formControlName="description"
+        class="form-control"
+        required
+      ></textarea>
+    </div>
+    <div *ngIf="productForm.get('description').invalid && productForm.get('description').touched" class="alert alert-danger">
+      La descripción es obligatoria
+    </div>
+    <div class="mb-3">
+      <label for="price" class="form-label">Precio</label>
+      <input
+        type="number"
+        id="price"
+        formControlName="price"
+        class="form-control"
+        required
+      />
+    </div>
+    <div *ngIf="productForm.get('price').invalid && productForm.get('price').touched" class="alert alert-danger">
+      El precio es obligatorio
+    </div>
+    <div class="mb-3">
+      <label for="image" class="form-label">URL de la Imagen</label>
+      <input
+        type="text"
+        id="image"
+        formControlName="image"
+        class="form-control"
+        required
+      />
+    </div>
+    <div *ngIf="productForm.get('image').invalid && productForm.get('image').touched" class="alert alert-danger">
+      La URL de la imagen es obligatoria
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="productForm.invalid">Añadir</button>
+  </form>
+</div>

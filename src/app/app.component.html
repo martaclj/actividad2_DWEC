@@ -1,8 +1,12 @@
 <header class="bg-primary text-white text-center p-4">
-  <h1 class="text-center" >Bienvenido a la aplicación de productos</h1>
+  <h1 class="text-center">Bienvenido a la aplicación de productos</h1>
 </header>
-<app-product-form (productCreated)="productList.addProduct($event)"></app-product-form>
-<app-product-list #productList></app-product-list>
+<!-- <app-product-form (productCreated)="productList.addProduct($event)"></app-product-form> -->
+<app-product-form-reactive (productCreated)="addProduct($event)"></app-product-form-reactive>
+<app-product-list></app-product-list>
+
 <footer class="bg-primary text-white text-center p-4">
   <p>Marta Larrad</p>
 </footer>
+
+<!-- ejemplo img reloj: https://cdn.pixabay.com/photo/2015/09/09/02/03/clock-931027_1280.jpg -->
